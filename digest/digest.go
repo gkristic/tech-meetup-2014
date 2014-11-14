@@ -18,12 +18,12 @@ var ErrIncompleteCopy = errors.New("incomplete copy detected")
 // File returns the SHA1 digest for a given file. If non-regular, it returns nil
 // instead. (The file name will still contribute for the parent directory's
 // digest, though, so it will get noticed in the final value.)
-func File(name string, info os.FileInfo) (path.Result, error) {
+func File(name string, info os.FileInfo, open func() (path.File, error)) (path.Result, error) {
 	if !info.Mode().IsRegular() {
 		return nil, nil
 	}
 
-	f, err := os.Open(name)
+	f, err := open()
 	if err != nil {
 		return nil, err
 	}

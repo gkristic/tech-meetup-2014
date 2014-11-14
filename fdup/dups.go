@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"sort"
+	"sync"
 
 	"github.com/gkristic/tech-meetup-2014/digest"
 	"github.com/gkristic/tech-meetup-2014/path"
@@ -16,15 +17,23 @@ type fileNode struct {
 	names     []string
 }
 
-var files = map[string]*fileNode{}
+var (
+	files    = map[string]*fileNode{}
+	filesMux sync.Mutex
+)
 
-func digestFile(fn string, info os.FileInfo) (path.Result, error) {
-	s, err := digest.File(fn, info)
+func digestFile(fn string, info os.FileInfo,
+	open func() (path.File, error)) (path.Result, error) {
+
+	s, err := digest.File(fn, info, open)
 	if err != nil {
 		return nil, err
 	}
 
 	key := s.String()
+
+	filesMux.Lock()
+	defer filesMux.Unlock()
 
 	if node := files[key]; node != nil {
 		if node.unitSize != info.Size() {

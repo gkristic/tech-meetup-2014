@@ -27,7 +27,9 @@ func (w *walker) Walk(root string) (Result, error) {
 	}
 
 	if !info.IsDir() {
-		return w.digestFile(root, info)
+		return w.digestFile(root, info, func() (File, error) {
+			return os.Open(root)
+		})
 	}
 
 	f, err := os.Open(root)

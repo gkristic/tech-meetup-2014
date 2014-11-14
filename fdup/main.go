@@ -8,6 +8,8 @@ import (
 	"github.com/gkristic/tech-meetup-2014/path"
 )
 
+const maxFiles = 10
+
 func main() {
 	root := "."
 
@@ -18,7 +20,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	w := path.NewWalker(digestFile, digest.Dir)
+	w := path.NewWalkerC(digestFile, digest.Dir, maxFiles)
 
 	if _, err := w.Walk(root); err != nil {
 		fmt.Fprintln(os.Stderr, err)
