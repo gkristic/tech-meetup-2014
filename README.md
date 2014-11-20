@@ -1,8 +1,13 @@
 Concurrency in Go - Workshop
 ============================
 
-This content will be used as the basis for a workshop on Go concurrency at
-TechMeetup 2014. The applications will be updated throughout the workshop.
+This was used for a workshop on Go concurrency at TechMeetup 2014. I tagged the
+version we started with as [original][]. The current master is the updated
+source including concurrent execution. Please refer to the [doc][] directory
+for more information and the PDF presentation (the PDF only in Spanish, sorry).
+
+  [original]: https://github.com/gkristic/tech-meetup-2014/tree/original
+  [doc]: https://github.com/gkristic/tech-meetup-2014/tree/master/doc
 
 Two different tools are included in this package: rsum and fdup. The former
 computes an SHA1 signature on files, pretty much like the standard sha1sum Linux
