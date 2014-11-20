@@ -207,7 +207,7 @@ further a lot of these things. Hope this text makes up for that :) Enjoy!
   [walker:close-quit]:  https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L60-L62
   [walker:collect]:     https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L119-L125
   [walker:main-loop]:   https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L90-L115
-  [walker:open-select]: https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L37-L33
+  [walker:open-select]: https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L33-L37
   [walker:open]:        https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L30-L50
   [walker:return]:      https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L120-L123
   [walker:select]:      https://github.com/gkristic/tech-meetup-2014/blob/316d4049c5c67a2383eb5a49f902dd33d97abebf/path/walker-c.go#L110-L113
